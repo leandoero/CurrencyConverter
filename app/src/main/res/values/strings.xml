@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">CurrencyConverter</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="converter">Converter</string>
+
+    <string-array name="amount_options">
+        <item>RUB</item>
+        <item>EUR</item>
+        <item>USD</item>
+    </string-array>
 </resources>
