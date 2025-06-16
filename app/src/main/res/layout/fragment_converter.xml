@@ -3,81 +3,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/constraintConverter"
-    android:padding="15dp"
+    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-   <ImageView
-       android:id="@+id/imageGreetings"
-       android:layout_width="70dp"
-       android:layout_height="70dp"
-       android:src="@drawable/ic_welcome_back"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       android:layout_marginTop="40dp"
-       android:layout_marginStart="5dp"/>
+    <!-- Приветствие -->
+    <ImageView
+        android:id="@+id/imageGreetings"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_welcome_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp" />
 
     <TextView
         android:id="@+id/itextNotification"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10sp"
-        android:text="Welcome back, \nVladimir!"
-        app:layout_constraintBottom_toBottomOf="@+id/imageGreetings"
-        app:layout_constraintEnd_toEndOf="@+id/textTitle"
-        app:layout_constraintStart_toEndOf="@+id/imageGreetings"
-        app:layout_constraintTop_toTopOf="@+id/imageGreetings" />
+        android:text="Welcome back,\nVladimir!"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/imageGreetings"
+        app:layout_constraintTop_toTopOf="@id/imageGreetings"
+        app:layout_constraintBottom_toBottomOf="@id/imageGreetings"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="12dp" />
 
+    <!-- Заголовок -->
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/converter"
-        android:padding="12dp"
-        android:textSize="40sp"
-        android:layout_marginTop="40dp"
+        android:textSize="32sp"
+        android:padding="8dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/imageGreetings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageGreetings"/>
+        android:layout_marginTop="24dp" />
 
-        <TextView
-            android:id="@+id/textAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Amount"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            app:layout_constraintTop_toBottomOf="@id/textTitle"
-            app:layout_constraintStart_toStartOf="parent"/>
+    <!-- Подписи полей -->
+    <TextView
+        android:id="@+id/textAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/textTitle"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textСonverted"
-        android:layout_marginEnd="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Converted to"
-        android:layout_marginTop="30dp"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@id/textTitle"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
+    <!-- Поле ввода -->
     <LinearLayout
         android:id="@+id/linearAmount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/oval_background"
         android:orientation="horizontal"
-        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="0dp"
+        android:paddingHorizontal="8dp"
         android:weightSum="3"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/textAmount"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAmount">
+        app:layout_constraintEnd_toStartOf="@id/imageView">
 
         <EditText
-            android:layout_marginStart="8dp"
             android:id="@+id/editAmount"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="48dp"
             android:layout_weight="1"
             android:hint="123"
             android:inputType="numberDecimal"
@@ -86,79 +92,74 @@
         <Spinner
             android:id="@+id/spinnerAmount"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="48dp"
             android:layout_weight="2"
-            android:entries="@array/amount_options"
-            android:spinnerMode="dropdown"
-            android:contentDescription="Выбор валюты" />
-    </LinearLayout>
-
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="50dp"
-        android:layout_height="45dp"
-        android:src="@drawable/ic_exchange"
-        app:layout_constraintBottom_toBottomOf="@+id/linearAmount"
-        app:layout_constraintEnd_toEndOf="@+id/textTitle"
-        app:layout_constraintStart_toStartOf="@+id/textTitle"
-        app:layout_constraintTop_toTopOf="@+id/linearAmount" />
-
-    <LinearLayout
-        android:id="@+id/linearConverted"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/oval_background"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/linearAmount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textСonverted"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:textColor="@color/gray"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:gravity="center"
-            android:text="1000"
-            android:contentDescription="Converted amount" />
-
-        <Spinner
-            android:id="@+id/spinnerConverted"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:contentDescription="Выбор валюты"
             android:entries="@array/amount_options"
             android:spinnerMode="dropdown" />
     </LinearLayout>
 
+    <!-- Кнопка обмена -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_exchange"
+        app:layout_constraintTop_toTopOf="@id/linearAmount"
+        app:layout_constraintBottom_toBottomOf="@id/linearAmount"
+        app:layout_constraintStart_toEndOf="@id/linearAmount"
+        app:layout_constraintEnd_toStartOf="@id/linearConverted"
+        android:layout_marginHorizontal="8dp" />
 
+    <!-- Результат конвертации -->
+    <LinearLayout
+        android:id="@+id/linearConverted"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/oval_background"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/linearAmount">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1000"
+            android:textColor="@color/gray" />
+
+        <Spinner
+            android:id="@+id/spinnerConverted"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="2"
+            android:entries="@array/amount_options"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <!-- Нижний блок -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="50dp"
-        android:padding="20dp"
+        android:layout_marginTop="24dp"
+        android:padding="16dp"
         android:background="@drawable/oval_background"
         android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/linearAmount"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:layout_marginBottom="8dp">
 
             <Spinner
                 android:layout_width="0dp"
@@ -171,23 +172,22 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:entries="@array/amount_options" />
-
         </LinearLayout>
 
         <Button
-            android:layout_marginTop="10dp"
+            android:id="@+id/btnSelectPair"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Select pair"
             android:backgroundTint="@color/black"
-            android:text="Select pair"/>
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="8dp" />
 
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/lineChart"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp" />
-
-
-
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
