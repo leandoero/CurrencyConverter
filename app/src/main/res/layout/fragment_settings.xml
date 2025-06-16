@@ -5,15 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginTop="15dp"
     android:padding="15dp"
     tools:context=".SettingsFragment">
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_general_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom=""
+        android:padding="16dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/imageUser"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_user"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/tvProfileSettings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Profile settings"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:gravity="center_vertical"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@id/imageUser"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imageUser"
+            app:layout_constraintBottom_toBottomOf="@id/imageUser" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <!-- Блок с настройками валют -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical"
+        android:layout_marginTop="12dp"
         android:background="@drawable/oval_background"
         android:padding="15dp">
 
@@ -21,7 +56,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/oval_background"
             android:orientation="horizontal"
+
+            android:padding="15dp"
             android:weightSum="3">
 
             <TextView
@@ -41,18 +79,22 @@
 
         <!-- Повтори выше блок при необходимости ещё 3 раза -->
         <!-- Пример: -->
+
+
         <LinearLayout
+            android:background="@drawable/oval_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3"
+            android:padding="15dp"
             android:layout_marginTop="8dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
-                android:text="Target currency"
+                android:text="Theme"
                 android:textSize="18sp"
                 android:gravity="center_vertical" />
 
@@ -60,10 +102,56 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:entries="@array/amount_options" />
+                android:entries="@array/theme_options" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/oval_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:padding="15dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Language"
+                android:textSize="18sp"
+                android:gravity="center_vertical" />
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:entries="@array/language_options" />
         </LinearLayout>
 
-        <!-- Добавь еще блоки при необходимости -->
+        <LinearLayout
+            android:background="@drawable/oval_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:weightSum="3"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Auto-update"
+                android:textSize="18sp"
+                android:gravity="center_vertical" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/mySwitch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -72,7 +160,6 @@
         android:id="@+id/layout_profile_settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
         android:padding="16dp"
         android:clickable="true"
         android:focusable="true">
