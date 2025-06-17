@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorBackground"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="15dp"
     android:padding="15dp"
     tools:context=".SettingsFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:backgroundTint="@color/colorSurface"
         android:background="@drawable/oval_background"
         android:id="@+id/layout_general_settings"
         android:layout_width="match_parent"
@@ -29,6 +30,7 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
+            android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/oval_background"
             android:padding="10dp"
             android:layout_marginStart="12dp"
@@ -37,7 +39,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:text="General settings"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorText"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageGeneralSettings"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,6 +48,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
     <!-- Блок с настройками валют -->
     <LinearLayout
+        android:backgroundTint="@color/colorSurface"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -70,12 +73,14 @@
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:text="Base currency"
+                android:textColor="@color/colorText"
                 android:textSize="18sp"
                 android:gravity="center_vertical" />
 
             <Spinner
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/colorPrimary"
                 android:layout_height="wrap_content"
                 android:entries="@array/amount_options" />
         </LinearLayout>
@@ -97,12 +102,14 @@
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorText"
                 android:text="Theme"
                 android:textSize="18sp"
                 android:gravity="center_vertical" />
 
             <Spinner
                 android:layout_width="0dp"
+                android:backgroundTint="@color/colorPrimary"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:entries="@array/theme_options" />
@@ -120,12 +127,14 @@
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorText"
                 android:text="Language"
                 android:textSize="18sp"
                 android:gravity="center_vertical" />
 
             <Spinner
                 android:layout_width="0dp"
+                android:backgroundTint="@color/colorPrimary"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:entries="@array/language_options" />
@@ -145,12 +154,17 @@
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:text="Auto-update"
+                android:textColor="@color/colorText"
                 android:textSize="18sp"
                 android:gravity="center_vertical" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/mySwitch"
                 android:layout_width="0dp"
+                app:thumbTint="@color/colorPrimary"
+                app:trackTint="@color/colorPrimaryDark"
+                android:backgroundTint="@color/colorPrimary"
+
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
@@ -160,6 +174,7 @@
 
     <!-- Блок "Настройки профиля" -->
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:backgroundTint="@color/colorSurface"
         android:background="@drawable/oval_background"
         android:id="@+id/layout_profile_settings"
         android:layout_width="match_parent"
@@ -178,6 +193,7 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
+            android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/oval_background"
             android:padding="10dp"
             android:id="@+id/tvProfileSettings"
@@ -185,7 +201,7 @@
             android:layout_height="wrap_content"
             android:text="Profile settings"
             android:textSize="18sp"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorText"
             android:gravity="center_vertical"
             android:layout_marginStart="12dp"
             app:layout_constraintStart_toEndOf="@id/imageUser"
@@ -196,6 +212,7 @@
 
     <!-- О приложении -->
     <LinearLayout
+        android:backgroundTint="@color/colorSurface"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -207,6 +224,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="About the application"
+            android:textColor="@color/colorText"
             android:textSize="20sp"
             android:gravity="center"
             android:textStyle="bold"
@@ -223,6 +241,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:text="Version:"
+                android:textColor="@color/colorTextSecondary"
                 android:textSize="16sp"
                 android:gravity="center_vertical" />
 
@@ -231,6 +250,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="1.0.0"
+                android:textColor="@color/colorTextSecondary"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -246,11 +266,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:text="Author:"
+                android:textColor="@color/colorTextSecondary"
                 android:textSize="16sp"
                 android:gravity="center_vertical" />
 
             <TextView
                 android:layout_width="0dp"
+                android:textColor="@color/colorTextSecondary"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="leandoero"

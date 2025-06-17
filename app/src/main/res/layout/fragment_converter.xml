@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/constraintConverter"
     android:padding="16dp"
+    android:background="@color/colorBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -18,6 +19,7 @@
         android:layout_marginTop="32dp" />
 
     <TextView
+        android:textColor="@color/colorText"
         android:id="@+id/itextNotification"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -37,6 +39,7 @@
         android:layout_height="wrap_content"
         android:text="@string/converter"
         android:textSize="32sp"
+        android:textColor="@color/colorText"
         android:padding="8dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/imageGreetings"
@@ -47,6 +50,7 @@
     <!-- Подписи полей -->
     <TextView
         android:id="@+id/textAmount"
+        android:textColor="@color/colorTextSecondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Amount"
@@ -57,6 +61,7 @@
 
     <TextView
         android:id="@+id/textСonverted"
+        android:textColor="@color/colorTextSecondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Converted to"
@@ -67,6 +72,7 @@
 
     <!-- Поле ввода -->
     <LinearLayout
+        android:backgroundTint="@color/colorSurface"
         android:id="@+id/linearAmount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -90,7 +96,9 @@
             android:imeOptions="actionDone" />
 
         <Spinner
+            android:backgroundTint="@color/colorPrimary"
             android:id="@+id/spinnerAmount"
+
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="2"
@@ -112,6 +120,7 @@
 
     <!-- Результат конвертации -->
     <LinearLayout
+        android:backgroundTint="@color/colorSurface"
         android:id="@+id/linearConverted"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -133,6 +142,7 @@
             android:textColor="@color/gray" />
 
         <Spinner
+            android:backgroundTint="@color/colorPrimary"
             android:id="@+id/spinnerConverted"
             android:layout_width="0dp"
             android:layout_height="48dp"
@@ -143,6 +153,7 @@
 
     <!-- Нижний блок -->
     <LinearLayout
+        android:backgroundTint="@color/colorSurface"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
@@ -163,12 +174,14 @@
 
             <Spinner
                 android:layout_width="0dp"
+                android:backgroundTint="@color/colorPrimary"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:entries="@array/amount_options" />
 
             <Spinner
                 android:layout_width="0dp"
+                android:backgroundTint="@color/colorPrimary"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:entries="@array/amount_options" />
@@ -179,8 +192,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Select pair"
-            android:backgroundTint="@color/black"
-            android:textColor="@android:color/white"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/colorText"
             android:layout_marginBottom="8dp" />
 
         <com.github.mikephil.charting.charts.LineChart
