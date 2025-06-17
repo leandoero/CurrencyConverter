@@ -11,36 +11,38 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/oval_background"
         android:id="@+id/layout_general_settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom=""
         android:padding="16dp"
         android:clickable="true"
         android:focusable="true">
 
         <ImageView
-            android:id="@+id/imageUser"
+            android:id="@+id/imageGeneralSettings"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_user"
+            android:src="@drawable/ic_general_settings"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
-            android:id="@+id/tvProfileSettings"
+            android:background="@drawable/oval_background"
+            android:padding="10dp"
+            android:layout_marginStart="12dp"
+            android:id="@+id/generalSettings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Profile settings"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
             android:gravity="center_vertical"
-            android:layout_marginStart="12dp"
-            app:layout_constraintStart_toEndOf="@id/imageUser"
+            android:text="General settings"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageGeneralSettings"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/imageUser"
-            app:layout_constraintBottom_toBottomOf="@id/imageUser" />
+            app:layout_constraintStart_toEndOf="@+id/imageGeneralSettings"
+            app:layout_constraintTop_toTopOf="@+id/imageGeneralSettings" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <!-- Блок с настройками валют -->
     <LinearLayout
@@ -49,6 +51,7 @@
         android:layout_weight="1"
         android:orientation="vertical"
         android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/oval_background"
         android:padding="15dp">
 
@@ -157,6 +160,7 @@
 
     <!-- Блок "Настройки профиля" -->
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/oval_background"
         android:id="@+id/layout_profile_settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -174,6 +178,8 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
+            android:background="@drawable/oval_background"
+            android:padding="10dp"
             android:id="@+id/tvProfileSettings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
