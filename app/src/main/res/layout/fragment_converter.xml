@@ -142,6 +142,7 @@
             android:textColor="@color/gray" />
 
         <Spinner
+
             android:backgroundTint="@color/colorPrimary"
             android:id="@+id/spinnerConverted"
             android:layout_width="0dp"
